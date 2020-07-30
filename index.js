@@ -4,7 +4,7 @@ function getRandomSize(min, max) {
 }
 
 $('document').ready(function() {
-  for (var i = 0; i < 25; i++) {
+  /*for (var i = 0; i < 25; i++) {
     var width = getRandomSize(200, 400);
     var height =  getRandomSize(200, 400);
     $.ajax({
@@ -19,6 +19,15 @@ $('document').ready(function() {
         console.log(':(')
       }
     });
-  }
+  }*/
+  $.ajax({
+    url: 'https://dog.ceo/api/breeds/image/random/25',
+    type: 'get',
+    dataType: 'json',
+    success: function(data) {
+      data.message.forEach(function(value, index) => {
+        $('#photos').append('<img src="' + value + '" style="width:' + width + '; height:' + height + '">');
+      });
+    }
+  })
 })
-
