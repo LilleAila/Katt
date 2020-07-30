@@ -21,7 +21,7 @@ $('document').ready(function() {
     });
   }*/
   $.ajax({
-    url: 'https://dog.ceo/api/breeds/image/random/25',
+    url: 'https://dog.ceo/api/breeds/image/random/3',
     type: 'get',
     dataType: 'json',
     success: function(data) {
