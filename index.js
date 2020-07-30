@@ -5,7 +5,7 @@ $('document').ready(function() {
       type: 'get',
       dataType: 'json',
       success: function(data) {
-        $('#photos').append('<img src="' + data.message + '">');
+        $('#photos').append('<img src="' + data[0].url + '">');
         console.log(data);
       },
       error: function() {
